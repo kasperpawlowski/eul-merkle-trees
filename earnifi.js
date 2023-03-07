@@ -36,7 +36,8 @@ const transformFunc = v => ({
 
                 return {
                     claimable: proof.item.claimable.toString(),
-                    proof: proof.witnesses.join(',')
+                    proof: proof.witnesses.join(','),
+                    readyToClaim: proof.item.claimable.sub(claimed[i]).toString(),
                 }
             })(),
             stake: ethers.constants.AddressZero,
